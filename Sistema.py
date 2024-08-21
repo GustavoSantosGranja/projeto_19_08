@@ -82,20 +82,44 @@ def main():
                         if cada_pf.cpf == cpf_para_atualizar:
                             pessoa_encontrada = True
 
-                            cada_pf.nome = input(f"Digite o novo Nome da Pessoa Física (Atual: {cada_pf.nome}): ") or cada_pf.nome
-                            cada_pf.rendimento  = float(input(f"Digite o novo rendimento mensal (Atual: R$ {cada_pf.rendimento:.2f}): ") or cada_pf.rendimento)
+                            while True:
+                                print("Escolha o que deseja atualizar:")
+                                print("1 - Nome")
+                                print("2 - Rendimento")
+                                print("3 - Logradouro")
+                                print("4 - Número")
+                                print("5 - Endereço Comercial")
+                                print("0 - Finalizar Atualização")
+                                opcao_atualizacao = int(input("Opção: "))
 
-                            novo_logradouro = input(f"Digite o novo Logradouro (Atual: {cada_pf.endereco.logradouro}): ")
-                            novo_numero = input(f"Digite o novo Número (Atual: {cada_pf.endereco.numero}): ")
+                                if opcao_atualizacao == 1:
+                                    cada_pf.nome = input(f"Digite o novo Nome (Atual: {cada_pf.nome}): ") or cada_pf.nome
 
-                            end_comercial = input(f"Este endereço é comercial? S/N (Atual: {'S' if cada_pf.endereco.endereco_Comercial else 'N'}): ")
-                            cada_pf.endereco.endereco_Comercial  = end_comercial.strip().upper() == 'S' if end_comercial else cada_pf.endereco.endereco_Comercial
+                                elif opcao_atualizacao == 2:
+                                    cada_pf.rendimento = float(input(f"Digite o novo Rendimento (Atual: R$ {cada_pf.rendimento:.2f}): ") or cada_pf.rendimento)
 
-                            if novo_logradouro:
-                                cada_pf.endereco.logradouro = novo_logradouro
-                            if novo_numero:
-                                cada_pf.endereco.numero = novo_numero
+                                elif opcao_atualizacao == 3:
+                                    novo_logradouro = input(f"Digite o novo Logradouro (Atual: {cada_pf.endereco.logradouro}): ")
+                                    if novo_logradouro:
+                                        cada_pf.endereco.logradouro = novo_logradouro
 
+                                elif opcao_atualizacao == 4:
+                                    novo_numero = input(f"Digite o novo Número (Atual: {cada_pf.endereco.numero}): ")
+                                    if novo_numero:
+                                        cada_pf.endereco.numero = novo_numero
+
+                                elif opcao_atualizacao == 5:
+                                    end_comercial = input(f"Este endereço é comercial? S/N (Atual: {'S' if cada_pf.endereco.endereco_Comercial else 'N'}): ")
+                                    if end_comercial.strip().upper() in ['S', 'N']:
+                                        cada_pf.endereco.endereco_Comercial = end_comercial.strip().upper() == 'S'
+
+                                elif opcao_atualizacao == 0:
+                                    print("Atualização finalizada!")
+                                    break
+
+                                else:
+                                    print("Opção inválida, tente novamente.")
+                            
                             print("Pessoa Física Atualizada!")
                             break
                     
@@ -173,20 +197,44 @@ def main():
                         if cada_pj.cnpj == cnpj_para_atualizar:
                             empresa_encontrada = True
 
-                            cada_pj.nome = input(f"Digite o novo Nome da Empresa (Atual: {cada_pj.nome}): ") or cada_pj.nome
-                            cada_pj.rendimento  = float(input(f"Digite o novo rendimento mensal (Atual: R$ {cada_pj.rendimento:.2f}): ") or cada_pj.rendimento)
+                            while True:
+                                print("Escolha o que deseja atualizar:")
+                                print("1 - Nome")
+                                print("2 - Rendimento")
+                                print("3 - Logradouro")
+                                print("4 - Número")
+                                print("5 - Endereço Comercial")
+                                print("0 - Finalizar Atualização")
+                                opcao_atualizacao = int(input("Opção: "))
 
-                            novo_logradouro = input(f"Digite o novo Logradouro (Atual: {cada_pj.endereco.logradouro}): ")
-                            novo_numero = input(f"Digite o novo Número (Atual: {cada_pj.endereco.numero}): ")
+                                if opcao_atualizacao == 1:
+                                    cada_pj.nome = input(f"Digite o novo Nome (Atual: {cada_pj.nome}): ") or cada_pj.nome
 
-                            end_comercial = input(f"Este endereço é comercial? S/N (Atual: {'S' if cada_pj.endereco.endereco_Comercial else 'N'}): ")
-                            cada_pj.endereco.endereco_Comercial  = end_comercial.strip().upper() == 'S' if end_comercial else cada_pj.endereco.endereco_Comercial
+                                elif opcao_atualizacao == 2:
+                                    cada_pj.rendimento = float(input(f"Digite o novo Rendimento (Atual: R$ {cada_pj.rendimento:.2f}): ") or cada_pj.rendimento)
 
-                            if novo_logradouro:
-                                cada_pj.endereco.logradouro = novo_logradouro
-                            if novo_numero:
-                                cada_pj.endereco.numero = novo_numero
+                                elif opcao_atualizacao == 3:
+                                    novo_logradouro = input(f"Digite o novo Logradouro (Atual: {cada_pj.endereco.logradouro}): ")
+                                    if novo_logradouro:
+                                        cada_pj.endereco.logradouro = novo_logradouro
 
+                                elif opcao_atualizacao == 4:
+                                    novo_numero = input(f"Digite o novo Número (Atual: {cada_pj.endereco.numero}): ")
+                                    if novo_numero:
+                                        cada_pj.endereco.numero = novo_numero
+
+                                elif opcao_atualizacao == 5:
+                                    end_comercial = input(f"Este endereço é comercial? S/N (Atual: {'S' if cada_pj.endereco.endereco_Comercial else 'N'}): ")
+                                    if end_comercial.strip().upper() in ['S', 'N']:
+                                        cada_pj.endereco.endereco_Comercial = end_comercial.strip().upper() == 'S'
+
+                                elif opcao_atualizacao == 0:
+                                    print("Atualização finalizada!")
+                                    break
+
+                                else:
+                                    print("Opção inválida, tente novamente.")
+                            
                             print("Empresa Atualizada!")
                             break
                     
